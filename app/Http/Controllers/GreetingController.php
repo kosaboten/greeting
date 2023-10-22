@@ -8,7 +8,7 @@ class GreetingController extends Controller
 {
     public function greeting($time_frame)
     {
-        switch ($time_frame){
+        switch ($time_frame) {
             case 'morning':
                 $time = '朝のあいさつ';
                 $msg = 'おはようございます';
@@ -30,6 +30,12 @@ class GreetingController extends Controller
                 $msg = 'ごきげんよう';
                 break;
         }
-        return view('greeting.timeframe', ['time' => $time, 'msg' =>$msg]);
+        return view('greeting.timeframe', ['time' => $time, 'msg' => $msg]);
+    }
+
+
+    public function freeword($freeword)
+    {
+        return view('freeword', ['freeword' => $freeword]);
     }
 }

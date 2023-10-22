@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/comments/{timeframe}', [GreetingController::class, 'greeting']);
+
+Route::get('/comments/freeword/{timeframe}', [GreetingController::class, 'freeword']);
