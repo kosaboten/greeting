@@ -38,4 +38,24 @@ class GreetingController extends Controller
     {
         return view('freeword', ['freeword' => $freeword]);
     }
+
+    public function randomMsg()
+    {
+        $num = random_int(1, 4);
+        switch ($num){
+            case 1:
+                $msg = 'おはようございます';
+                break;
+            case 2:
+                $msg = 'こんにちは';
+                break;
+            case 3:
+                $msg = 'こんばんは';
+                break;
+            default:
+                $msg = 'おやすみ';
+                break;
+        }
+        return view('greeting.random', ['msg' => $msg]);
+    }
 }
